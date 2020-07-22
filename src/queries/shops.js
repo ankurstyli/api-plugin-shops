@@ -24,7 +24,10 @@ export default async function shops(context, { shopIds } = {}) {
     });
   }
 
-  await context.validatePermissions("reaction:legacy:shops", "read", { shopId: null });
+  /*
+   ** TODO: Allow access only for admin.
+   */
+ // await context.validatePermissions("reaction:legacy:shops", "read", { shopId: null });
 
   return Shops.find();
 }
