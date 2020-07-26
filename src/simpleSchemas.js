@@ -848,5 +848,13 @@ export const Shop = new SimpleSchema({
     type: Boolean,
     optional: true,
     label: "Allow custom user locale"
+  },
+  "country": {
+    type: String,
+    optional: false
+  },
+  shop_code: {
+    type: String,
+    optional: true
   }
 });

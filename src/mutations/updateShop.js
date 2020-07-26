@@ -72,6 +72,16 @@ const inputSchema = new SimpleSchema({
   "timezone": {
     type: String,
     optional: true
+  },
+  country: {
+    type: String,
+    optional: false
+  },
+  active: {
+    type: Boolean
+  },
+  shop_code: {
+    type: String
   }
 });
 

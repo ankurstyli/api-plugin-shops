@@ -21,6 +21,13 @@ input CreateShopInput {
 
   "The shop type. Default is `primary`, but there may be only one primary shop."
   type: String
+
+  "Country of the shop"
+  country: String!
+
+  active: Boolean
+
+  shop_code: String
 }
 
 "The response from the `createShop` mutation"

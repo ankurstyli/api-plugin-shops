@@ -128,6 +128,12 @@ type Shop implements Node {
 
   "The shop's units of measure"
   unitsOfMeasure: [UnitOfMeasure]
+
+  country: String
+
+  active: Boolean
+
+  shop_code: String
 }
 
 """

@@ -92,6 +92,14 @@ input UpdateShopInput {
 
   "The shop's timezone"
   timezone: String
+
+  country: String!
+
+  active: Boolean
+
+  shop_code: String
+
+
 }
 
 "The response from the `updateShop` mutation"

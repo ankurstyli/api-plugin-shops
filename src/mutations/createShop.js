@@ -32,23 +32,21 @@ const inputSchema = new SimpleSchema({
   type: {
     type: String,
     optional: true
+  },
+  country: {
+    type: String,
+    optional: false
+  },
+  shop_code: {
+    type: String,
+    optional: true
+  },
+  active: {
+    type: Boolean
   }
 });
 
-/**
- * @name shop/createShop
- * @memberof Mutations/Shop
- * @method
- * @summary Creates a new shop
- * @param {Object} context - App context
- * @param {Object} input - an object of all mutation arguments that were sent
- * @param {String} [input.currencyCode] Currency in which all money values should be assumed to be. Default "USD"
- * @param {String} [input.defaultLanguage] Default language for translation and localization. Default "en"
- * @param {String} [input.defaultTimezone] Primary timezone. Default "US/Pacific"
- * @param {String} input.name A unique name for the shop
- * @param {String} [input.type] The shop type. Default is "primary", but there may be only one primary shop.
- * @returns {Promise<Object>} with updated shop
- */
+
 export default async function createShop(context, input) {
   inputSchema.validate(input || {});
 
@@ -70,14 +68,18 @@ export default async function createShop(context, input) {
     name,
     description,
     shopId,
-    type
+    type,
+    country,
+    shop_code,
+    active
   } = input;
 
   const domain = rootUrl && new URL(rootUrl).hostname;
   const now = new Date();
+
   const shop = {
     _id: shopId || Random.id(),
-    active: true,
+    active,
     availablePaymentMethods: [],
     baseUOL: "in",
     baseUOM: "oz",
@@ -86,6 +88,8 @@ export default async function createShop(context, input) {
     domains: [domain],
     language: defaultLanguage || "en",
     name,
+    country,
+    shop_code,
     description,
     paymentMethods: [],
     shopType: type || "primary",
