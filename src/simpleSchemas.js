@@ -653,7 +653,8 @@ export const Shop = new SimpleSchema({
   },
   "shopType": String,
   "active": {
-    type: Boolean
+    type: Boolean,
+    optional: true
   },
   // DEPRECATED and UNUSED
   "status": {
@@ -851,7 +852,7 @@ export const Shop = new SimpleSchema({
   },
   "country": {
     type: String,
-    optional: false
+    optional: true
   },
   shop_code: {
     type: String,

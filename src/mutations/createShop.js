@@ -35,14 +35,15 @@ const inputSchema = new SimpleSchema({
   },
   country: {
     type: String,
-    optional: false
+    optional: true
   },
   shop_code: {
     type: String,
     optional: true
   },
   active: {
-    type: Boolean
+    type: Boolean,
+    optional: true
   }
 });
 

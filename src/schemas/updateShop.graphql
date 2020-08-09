@@ -93,7 +93,7 @@ input UpdateShopInput {
   "The shop's timezone"
   timezone: String
 
-  country: String!
+  country: String
 
   active: Boolean
 

@@ -75,7 +75,7 @@ const inputSchema = new SimpleSchema({
   },
   country: {
     type: String,
-    optional: false
+    optional: true
   },
   active: {
     type: Boolean

@@ -23,7 +23,7 @@ input CreateShopInput {
   type: String
 
   "Country of the shop"
-  country: String!
+  country: String
 
   active: Boolean
 
