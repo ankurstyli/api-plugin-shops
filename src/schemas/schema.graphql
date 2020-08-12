@@ -105,6 +105,9 @@ type Shop implements Node {
   "Shop's keywords"
   keywords: String
 
+  "Shop Type"
+  shopType: String
+
   "Shop default language"
   language: String!
 
